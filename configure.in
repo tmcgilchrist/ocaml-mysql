@@ -48,19 +48,19 @@ fi
 AC_CHECK_LIB(z, compress)
 
 AC_CHECKING(for MySQL header files)
-AC_CHECK_HEADER(mysql/mysql.h)
-if test "$ac_cv_header_mysql_mysql_h" = "no"; then
+AC_CHECK_HEADER(mysql.h)
+if test "$ac_cv_header_mysql_h" = "no"; then
 	dirs="/usr/local/include
 	      /usr/local/mysql/include
 	      /usr/include
 	      /usr/include/mysql
 	      /sw/include"
 	for d in $dirs; do
-	    test -f "$d/mysql/mysql.h" && CFLAGS="$CFLAGS -I$d" 
+	    test -f "$d/mysql.h" && CFLAGS="$CFLAGS -I$d" 
 	done
-	unset ac_cv_header_mysql_mysql_h
+	unset ac_cv_header_mysql_h
 	AC_CHECKING(in more locations)
-	AC_CHECK_HEADER(mysql/mysql.h)
+	AC_CHECK_HEADER(mysql.h)
 fi
 
 AC_OUTPUT(Makefile)

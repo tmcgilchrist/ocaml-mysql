@@ -28,7 +28,7 @@
 #endif
 #include <mysql.h>
 #else
-#include <mysql/mysql.h>
+#include <mysql.h>
 /*
 #include <mysql/mysqld_error.h>
 #include <mysql/errmsg.h>
